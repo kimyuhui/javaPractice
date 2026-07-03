@@ -29,7 +29,7 @@ public class practice3 {
 			for(int j = 4; j >= i; j--) {
 				System.out.print(" ");
 			}
-			for(int k = 1; k <i*2; k++) {
+			for(int k = 1; k < i*2; k++) {
 				System.out.print("*");
 			}
 			System.out.println();
@@ -125,7 +125,8 @@ public class practice3 {
 			
 			System.out.println();
 		}
-		System.out.println("끝");
+		
+		System.out.println("----------------------");
 	}
 
 
