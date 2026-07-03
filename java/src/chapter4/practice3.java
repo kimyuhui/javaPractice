@@ -96,11 +96,39 @@ public class practice3 {
 		
 		System.out.println("----------------------");
 		
+		for(int i = 1; i <= 7; i++) {
+			for (int k = 1; k <= i; k++) { 
+				System.out.print("*");
+			}
+			for(int j = 6; j >= i; j--) {
+			System.out.print(" ");
+			}
+			for(int l = 7; l >= i; l--) {
+				System.out.print("*");
+			}
+			System.out.println();
+			}
 		
+		for(int i = 1; i <= 7; i++) {
+			for (int k = 6; k >= i; k--) {
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= i; j++) { 
+				System.out.print("*");
+		}
+			for(int l = 1; l < i; l++) {
+				System.out.print(" ");}
+			for(int m = 7; m >= i; m--) {
+				System.out.print("*");}
+			
+			System.out.println();
+		}
+
+		}
 
 
 		}
 		
-	}
+	
 
 
