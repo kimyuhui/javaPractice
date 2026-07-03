@@ -115,19 +115,21 @@ public class practice3 {
 			}
 			for (int j = 1; j <= i; j++) { 
 				System.out.print("*");
-		}
+			}
 			for(int l = 1; l < i; l++) {
-				System.out.print(" ");}
+				System.out.print(" ");
+			}
 			for(int m = 7; m >= i; m--) {
-				System.out.print("*");}
+				System.out.print("*");
+			}
 			
 			System.out.println();
 		}
 
-		}
+	}
 
 
-		}
+}
 		
 	
 
