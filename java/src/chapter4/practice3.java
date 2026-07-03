@@ -125,7 +125,7 @@ public class practice3 {
 			
 			System.out.println();
 		}
-
+		System.out.println("끝");
 	}
 
 
