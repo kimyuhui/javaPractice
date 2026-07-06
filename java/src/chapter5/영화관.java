@@ -8,10 +8,13 @@ public class 영화관 {
 	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		Random r = new Random();
-
+		
+		
 		System.out.println("             §§§ 영화관 §§§");
 		System.out.println();
 		System.out.println();
+		boolean boo = true;
+		while(boo = true) {
 		System.out.println("               좌석 선택");
 		System.out.println("----------------------------------------");
 		System.out.println("   A   B   C   D   E   F   G   H   I   J");
@@ -115,7 +118,7 @@ public class 영화관 {
 			}
 		}
 		
-		
+		System.out.println();
 		System.out.println("예약하시겠습니까?");
 		System.out.println("1. 예     2. 아니오");
 		int yes = sc.nextInt();
@@ -124,28 +127,34 @@ public class 영화관 {
 			System.out.println();
 			System.out.println("예약이 완료되었습니다");
 			System.out.println("----------------------------------------");
-			System.out.println("   A   B   C   D   E   F   G   H   I   J");
-			
-			
-			
+			System.out.printf("%s%3s %3s %3s %3s %3s %3s %3s %3s %3s %3s\n",
+					" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J");
 			
 			for (int k = 0; k < answer; k++) {
-				sit_Array = '■';
+				sit[answer2-1][alp] = '■';
 			}
-			
+
 			for (int x = 0; x < 5; x++) { 
 				for (int y = x; y == x; y++) { 
 					System.out.print(x + 1);
 				}
+
 				for (int z = 0; z < 10; z++) {
 					System.out.printf("%3c ", sit[x][z]);
 				}
 				System.out.println();
 			}
 			
+		} 
+		if(yes == 2) {
+			boo = false;
+			System.out.println();
+			System.out.println("예약이 취소되었습니다");
+			System.out.println("처음으로 돌아갑니다");
+			System.out.println();
+		continue;} break;
+		}
+		 
 		
-		} else {} 
-
 	}
-
 }
