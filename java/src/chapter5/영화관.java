@@ -141,26 +141,14 @@ public class 영화관 {
 					System.out.println("C구역 좌석을 선택하셨습니다. (11000원)");
 							CclassCnt++;
 				} else {System.out.println("잘못된 입력을 하셨습니다");}
-				
-				
+						
 				price = AclassCnt*15000 + BclassCnt*13000 + CclassCnt*11000;
 			
-				
-//				boolean AA = answer2 < 3 && alp <= 10;
-//				boolean BB = answer2 > 2 && answer2 < 5 && alp <=10;
-//				boolean CC = answer2 > 4 && alp <=10;
-//				
-//				int[] AAval = new int[AA ? 1 : 0];
-//				int[] BBval = new int[BB ? 1 : 0];
-//				int[] CCval = new int[CC ? 1 : 0];
-
-				
-
 			}
 			
 			System.out.println();
 			System.out.println("예약하시겠습니까?");
-			System.out.println("1. 예     2. 아니오");
+			System.out.print("1. 예     2. 아니오: ");
 			int yes = sc.nextInt();
 			
 			System.out.println("-------------------------------");
@@ -175,24 +163,20 @@ public class 영화관 {
 				if(pay == 1) {
 					System.out.print("지불할 현금 입력: ");
 					int money = sc.nextInt();
-					System.out.println(money + " 원 받았습니다");
+					if(money < price) {System.out.println("금액이 부족합니다.");
+					break;
+					}  else if(money>=price) {System.out.println(money + " 원 받았습니다");
 					System.out.println("거스름돈: " + (money - price));
+				} 
 					
-				}
+				} else {System.out.println("계산이 완료되었습니다");}
 				
 				System.out.println();
 				System.out.println("예약이 완료되었습니다");
 				System.out.println("----------------------------------------");
 				System.out.printf("%s%3s %3s %3s %3s %3s %3s %3s %3s %3s %3s\n",
 						" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J");
-
-//			for (int k = 0; k < answer; k++) {
-//				int[] h = new int[] {answer2 - 1};
-//				int[] w = new int[] {alp};
-//				sit[answer2 - 1][alp] = '■';
-//			} 
-
-				
+		
 				for (int k = 0; k < answer; k++) {
 					sit[height[k]][weight[k]] = '■';
 				}
@@ -217,7 +201,10 @@ public class 영화관 {
 				System.out.println();
 				continue;
 			}
+			System.out.println();
+			System.out.println("-----♡♡♡♡-----");
 			System.out.println("즐거운 관람 되세요");
+			System.out.println("-----♡♡♡♡-----");
 			break;
 			
 
