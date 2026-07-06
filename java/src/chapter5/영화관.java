@@ -5,64 +5,148 @@ import java.util.Scanner;
 
 public class 영화관 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		Random r = new Random();
-		
+
 		System.out.println("             §§§ 영화관 §§§");
 		System.out.println();
 		System.out.println();
 		System.out.println("               좌석 선택");
 		System.out.println("----------------------------------------");
 		System.out.println("   A   B   C   D   E   F   G   H   I   J");
-		
-		char sitArr[][] = new char[5][10];
-		for(int i = 0; i < 5; i++) {
-			for(int j = 0; j < 10; j++) {
-				sitArr[i][j] = '□';
+
+		char sit[][] = new char[5][10];
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 10; j++) {
+				sit[i][j] = '□';
 			}
-		}
-		
-		String[] A = {"예약가능", "예약불가"};
-		String[] sit = {"A1", "A2", "A3", "A4", "A5",
-						"B1", "B2", "B3", "B4", "B5",
-						"C1", "C2", "C3", "C4", "C5",
-						"D1", "D2", "D3", "D4", "D5",
-						"E1", "E2", "E3", "E4", "E5",
-						"F1", "F2", "F3", "F4", "F5",
-						"G1", "G2", "G3", "G4", "G5",
-						"H1", "H2", "H3", "H4", "H5",
-						"I1", "I2", "I3", "I4", "I5",
-						"J1", "J2", "J3", "J4", "J5"};
-		
-		int w = r.nextInt(0,9);
-		int h = r.nextInt(0,4);
-		sitArr[h][w] = '■';
-		
-		for(int k = 0; k < 8; k++) {
-			 sitArr[h][w] = '■';
 		}
 
-		
-		for (int i = 0; i < 5; i++) {
-			for (int k = i; k == i; k++) {
-				System.out.print(i+1);
+		String[] A = { "예약가능", "예약불가" };
+
+		for (int k = 0; k < 8; k++) {
+			int w = r.nextInt(0, 9);
+			int h = r.nextInt(0, 4);
+			sit[h][w] = '■';
+		}
+
+		for (int i = 0; i < 5; i++) { // 좌석 이름을 보기 편리하게 하기 위해
+			for (int k = i; k == i; k++) { // 열과 행에 알파벳, 숫자가 보이도록 함
+				System.out.print(i + 1);
 			}
-			for(int j = 0; j < 10; j++) {
-				System.out.printf("%3c ", sitArr[i][j]);
+			for (int j = 0; j < 10; j++) {
+				System.out.printf("%3c ", sit[i][j]); // 칸이 다닥다닥 붙어있지 않고 한칸씩 띄어지도록 함
 			}
 			System.out.println();
 		}
-		
-	
-		
+
 		System.out.println("----------------------------------------");
 		System.out.println();
-		System.out.println("몇 좌석 예매하시나요?");
+		System.out.print("몇 좌석 예매하시나요? ");
+		int answer = sc.nextInt();
+		System.out.println("입력한 좌석 수: " + answer);
+		System.out.println();
+		System.out.println("좌석을 선택해주세요 (A1 ~ J5)");
 
+		int alp = 0; // answer1
+		int sit_Array = 0;
+		int answer2 = 0;
+		int i = 0;
+
+		// 좌석을 선택하면 위의 answer 수만큼 문자열 개수 저장하기
+		// 좌석을 숫자로 선언했기 때문에 알파벳도 숫자로 바꾸기 위해 alp 변수 선언
+
+		while (i < answer) {
+			System.out.print("행(A~J): ");
+			String answer1 = sc.next();
+			switch (answer1) {
+			case "A":
+				alp = 0;
+				break;
+
+			case "B":
+				alp = 1;
+				break;
+
+			case "C":
+				alp = 2;
+				break;
+
+			case "D":
+				alp = 3;
+				break;
+
+			case "E":
+				alp = 4;
+				break;
+
+			case "F":
+				alp = 5;
+				break;
+
+			case "G":
+				alp = 6;
+				break;
+
+			case "H":
+				alp = 7;
+				break;
+
+			case "I":
+				alp = 8;
+				break;
+
+			case "J":
+				alp = 9;
+				break;
+			} // switch 변수로 알파벳을 숫자로 변환함
+			System.out.print("열(1~5): ");
+			answer2 = sc.nextInt();
+
+			i++;
+
+			sit_Array = sit[answer2 - 1][alp];
+
+			while (sit_Array == '■') {
+				System.out.println("예약 불가능한 좌석입니다");
+				i--;
+				break;
+			}
+		}
 		
+		sit_Array = sit[answer2 - 1][alp];
 		
+		System.out.println("예약하시겠습니까?");
+		System.out.println("1. 예     2. 아니오");
+		int yes = sc.nextInt();
 		
+		if(yes == 1) { 
+			System.out.println();
+			System.out.println("예약이 완료되었습니다");
+			System.out.println("----------------------------------------");
+			System.out.println("   A   B   C   D   E   F   G   H   I   J");
+			
+			
+			
+			
+			for (int k = 0; k < answer; k++) {
+				sit_Array = '■';
+			}
+			
+			for (int x = 0; x < 5; x++) { 
+				for (int y = x; y == x; y++) { 
+					System.out.print(x + 1);
+				}
+				for (int z = 0; z < 10; z++) {
+					System.out.printf("%3c ", sit[x][z]);
+				}
+				System.out.println();
+			}
+			
+		
+		} else {}
+
 	}
 
 }
