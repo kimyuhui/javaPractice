@@ -62,6 +62,10 @@ public class 영화관 {
 			int sit_Array = 0;
 			int answer2 = 0;
 			int i = 0;
+			int price = 0;
+			int AclassCnt = 0;
+			int BclassCnt = 0;
+			int CclassCnt = 0;
 			
 			int[] height = new int[5];
 			int[] weight = new int[10];
@@ -115,42 +119,44 @@ public class 영화관 {
 				
 				System.out.print("열(1~5): ");
 				answer2 = sc.nextInt();
-				
-				if(answer2 < 3 && alp <= 10) {
-					System.out.println("A구역 좌석을 선택하셨습니다. (15000원)");
-							int Aclass = 15000;
-				} else if(answer2 > 2 && answer2 < 5 && alp <=10) {
-					System.out.println("B구역 좌석을 선택하셨습니다. (13000원)");
-							int Bclass = 13000;
-				} else if(answer2 > 4 && alp <=10) {
-					System.out.println("C구역 좌석을 선택하셨습니다. (11000원)");
-							int Cclass = 11000;
-				}
-				
-				boolean AA = answer2 < 3 && alp <= 10;
-				boolean BB = answer2 > 2 && answer2 < 5 && alp <=10;
-				boolean CC = answer2 > 4 && alp <=10;
-				
-				int[i] AAval = new int[AA ? i : 0];
-				int[i] BBval = new int[BB ? i : 0];
-				int[i] CCval = new int[CC ? i : 0];
+	
 				
 				height[i] = answer2 - 1;
 				weight[i] = alp;	
 				i++;
-				
-
-
+				sit_Array = sit[answer2 - 1][alp];
 				while (sit_Array == '■') {
 					System.out.println("예약 불가능한 좌석입니다");
 					i--;
 					break;
-				}
+				} 
+			
+				if(answer2 < 3 && alp <= 10) {
+					System.out.println("A구역 좌석을 선택하셨습니다. (15000원)");
+							AclassCnt++;
+				} else if(answer2 > 2 && answer2 < 5 && alp <=10) {
+					System.out.println("B구역 좌석을 선택하셨습니다. (13000원)");
+							BclassCnt++; 
+				} else if(answer2 > 4 && alp <=10) {
+					System.out.println("C구역 좌석을 선택하셨습니다. (11000원)");
+							CclassCnt++;
+				} else {System.out.println("잘못된 입력을 하셨습니다");}
+				
+				
+				price = AclassCnt*15000 + BclassCnt*13000 + CclassCnt*11000;
+			
+				
+//				boolean AA = answer2 < 3 && alp <= 10;
+//				boolean BB = answer2 > 2 && answer2 < 5 && alp <=10;
+//				boolean CC = answer2 > 4 && alp <=10;
+//				
+//				int[] AAval = new int[AA ? 1 : 0];
+//				int[] BBval = new int[BB ? 1 : 0];
+//				int[] CCval = new int[CC ? 1 : 0];
+
+				
+
 			}
-			
-			
-			int price = AAval*15000 + BBval*13000 + CCval*11000;
-			
 			
 			System.out.println();
 			System.out.println("예약하시겠습니까?");
@@ -162,19 +168,17 @@ public class 영화관 {
 			if (yes == 1) {
 				System.out.println("결제 방법을 선택하세요");
 				System.out.println("1. 현금    2. 카드");
-				System.out.printf("금액: %d", price);
-				
+				System.out.printf("금액: %d\n", price);
+				System.out.println("선택: ");
 				int pay = sc.nextInt();
 				System.out.println("----------------------------------");
 				if(pay == 1) {
 					System.out.print("지불할 현금 입력: ");
 					int money = sc.nextInt();
+					System.out.println(money + " 원 받았습니다");
+					System.out.println("거스름돈: " + (money - price));
 					
 				}
-				
-				
-				
-				
 				
 				System.out.println();
 				System.out.println("예약이 완료되었습니다");
@@ -213,9 +217,12 @@ public class 영화관 {
 				System.out.println();
 				continue;
 			}
+			System.out.println("즐거운 관람 되세요");
 			break;
+			
 
 		}
+
 
 				}
 		
