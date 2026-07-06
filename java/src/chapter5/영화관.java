@@ -130,10 +130,26 @@ public class 영화관 {
 			System.out.printf("%s%3s %3s %3s %3s %3s %3s %3s %3s %3s %3s\n",
 					" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J");
 			
-			for (int k = 0; k < answer; k++) {
-				sit[answer2-1][alp] = '■';
-			}
+			
+			
+			
+//			for (int k = 0; k < answer; k++) {
+//				int[] h = new int[] {answer2 - 1};
+//				int[] w = new int[] {alp};
+//				sit[answer2 - 1][alp] = '■';
+//			} 
+	
+			int[] height;
+			height = new int[] {answer2 - 1};
+			
+			int[] weight;
+			weight = new int[] {alp};
+			
 
+			for (int k = 0; k < answer; k++) {
+				sit[height.length][weight.length] = '■';
+			} 
+			
 			for (int x = 0; x < 5; x++) { 
 				for (int y = x; y == x; y++) { 
 					System.out.print(x + 1);
