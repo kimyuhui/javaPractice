@@ -229,7 +229,7 @@ public class 영화관 {
 			}	System.out.println();	
 			System.out.println();
 			System.out.println("                       ♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥");
-			System.out.println("                         즐거운 관람 되세요 :-)");
+			System.out.println("                         즐거운 관람 되세요 ^^");
 			System.out.println("                       ♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥");          
 			System.out.println("-----------------------------------------------------------------");
 			break;
