@@ -163,7 +163,7 @@ public class 영화관 {
 			
 			}
 			System.out.println();
-			System.out.println("예약하시겠습니까?");
+			System.out.println("예매하시겠습니까?");
 			System.out.print("1. 예     2. 아니오: ");
 			int yes = sc.nextInt();
 			
@@ -188,7 +188,7 @@ public class 영화관 {
 				} else {System.out.println("계산이 완료되었습니다");}
 				
 				System.out.println();
-				System.out.println("예약이 완료되었습니다");
+				System.out.println("예매가 완료되었습니다");
 				System.out.println("----------------------------------------");
 				System.out.printf("%s%3s %3s %3s %3s %3s %3s %3s %3s %3s %3s\n",
 						" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J");
@@ -213,7 +213,7 @@ public class 영화관 {
 			if (yes == 2) {
 				boo = false;
 				System.out.println();
-				System.out.println("예약이 취소되었습니다");
+				System.out.println("예매가 취소되었습니다");
 				System.out.println("처음으로 돌아갑니다");
 				System.out.println();
 				continue;
@@ -229,7 +229,7 @@ public class 영화관 {
 			}	System.out.println();	
 			System.out.println();
 			System.out.println("                       ♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥");
-			System.out.println("                         즐거운 관람 되세요 :-)");
+			System.out.println("                          즐거운 관람 되세요 :-)");
 			System.out.println("                       ♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥♡♥");          
 			System.out.println("-----------------------------------------------------------------");
 			break;
