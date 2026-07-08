@@ -90,11 +90,11 @@ public class exam02 {
 		int sum = 26;
 		
 		for(int i = 0; i < 5; i++) { 
+			sum = sum - 1;
 			for(int j = 0; j < 5; j++) {
-				array[i][j] = sum - 5;
-				sum--;
- 			}
+				array[i][j] = sum - 5 * j;
 			}
+		}
 			
 		
 		for (int i = 0; i < 5; i++) {
@@ -106,8 +106,29 @@ public class exam02 {
 		
 		System.out.println("------------------------------------------");
 		
+		sum = 0;
+		for(int i = 0; i < 5; i++) { 
+			sum = sum + 1;
+			for(int j = 0; j < 5; j++) {
+				array[i][j] = sum + 5 * j;
+			}
+		}
+			
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.printf("%2d ", array[i][j]);
+			}
+			System.out.println();
+		}
+		
 
 		System.out.println("------------------------------------------");
+		
+		
+		
+		
+
+
 		
 		// 1  3  5  7  9
 		// 11 13 15 17 19
