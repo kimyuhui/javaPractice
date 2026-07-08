@@ -106,36 +106,40 @@ public class practice {
 		int weight = 0;
 		int height1 = 4;
 		int weight1 = 4;
-		int sum2 = 0;
+		int sum2 = 1;
 		
 		
 		while(sum2 < 26) {
-				for(int j = weight; j < weight1 && j >= 0; j++) {
-					array2[height][j] += sum2;
+			for(int j = weight; j <= weight1; j++) {
+					array2[height][j] = sum2;
+					sum2++;
 				}
 					height++;
 			
-			for(int i = height; i < height1 && i >= 0; i++) {
-					array2[i][weight1] += sum2;
+			for(int i = height; i <= height1; i++) {
+					array2[i][weight1] = sum2;
+					sum2++;
 				}
 					weight1--;
 			
-			for(int j = weight1; j < weight && j >= 0; j--) {
-					array2[height1][j] += sum2;
+			for(int j = weight1; j >= weight && j >= 0; j--) {
+					array2[height1][j] = sum2;
+					sum2++;
 				}
 					height1--;
 			
-			for(int i = height1; i < height && i >= 0; i--) {
-					array2[i][weight] += sum2;
+			for(int i = height1; i >= height && i >= 0; i--) {
+					array2[i][weight] = sum2;
+					sum2++;		
+				}
 					weight++;
-			}
 		}
 		
 		
-		for (int i = height; i < height1; i++) {
-			for (int j = weight; j < weight1; j++) {
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
 				System.out.printf("%2d ", array2[i][j]);
-			}
+				}
 			System.out.println();
 		}
 		
@@ -162,7 +166,6 @@ public class practice {
 //			System.out.println();
 //		}
 //		
-		
 		
 	}
 
