@@ -4,11 +4,6 @@ import java.util.Scanner;
 
 public class Bank {
 
-	private static final String[][] String = null;
-
-
-
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
