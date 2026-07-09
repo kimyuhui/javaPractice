@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class practice {
 
 	public static void main(String[] args) {
+		
+		// void main -> main이 끝나고 나면 반환하는거 없이 끝남 
 		Scanner sc = new Scanner(System.in);
 		
 		
@@ -19,13 +21,12 @@ public class practice {
 			}
 		}
 
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ", array[i][j]);
-			}
-			System.out.println();
-		}
-		
+		printArray(n, array);
+		//메서드의 틀 모양과 같은 타입으로 넣어야됨
+		// ㄴ printArray(array, n) -> 컴파일 오류 
+		// Ctrl 누르고 클릭하면 해당 메서드로 이동함
+	
+	
 		System.out.println("------------------------------------------");
 		
 		
@@ -38,12 +39,9 @@ public class practice {
 			}
 		}
 		
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ", array[i][j]);
-			}
-			System.out.println();
-		}
+		printArray(a1, array);
+		
+		
 		System.out.println("------------------------------------------");
 		
 		int a2 = 25;
@@ -54,12 +52,7 @@ public class practice {
 			}
 		}
 		
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ", array[i][j]);
-			}
-			System.out.println();
-		}
+		printArray(a2, array);
 		
 		System.out.println("------------------------------------------");
 		
@@ -74,12 +67,7 @@ public class practice {
 		}
 			
 		
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ", array[i][j]);
-			}
-			System.out.println();
-		}
+		printArray(sum, array);
 		
 		System.out.println("------------------------------------------");
 		
@@ -91,12 +79,7 @@ public class practice {
 			}
 		}
 			
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ", array[i][j]);
-			}
-			System.out.println();
-		}
+		printArray(sum, array);
 		
 
 		System.out.println("------------------------------------------");
@@ -136,12 +119,7 @@ public class practice {
 		}
 		
 		
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				System.out.printf("%2d ", array2[i][j]);
-				}
-			System.out.println();
-		}
+		printArray(sum2, array2);
 		
 		
 //		System.out.println("몇 칸 짜리로 만드시겠습니까");
@@ -168,5 +146,25 @@ public class practice {
 //		
 		
 	}
+	
+	public static void printArray(int arrayCnt, int[][] myArray) {
+		
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.printf("%2d ", myArray[i][j]);
+				}
+			System.out.println();
+		}
+		
+		
+		//void = 반환해주는게없다 메서드가 끝나면 바로 끝냄 
+		// 메서드 = 메인도 메서드이므로 안에 같이 있으면 안됨
+		
+		
+		
+		
+	}
+	
+	
 
 }
