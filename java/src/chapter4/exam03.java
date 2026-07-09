@@ -37,17 +37,17 @@ public class exam03 {
 //			j++;
 //		}
 		
-		int sum = 0;
-		for(int i = 4; i <= 10; i++) {
-			for(int j = 5; i <= 10; j++) {
-				sum = (4 * i) + (5 * j);
-				if(sum == 60) {
-				System.out.println(i + j + sum);}
-				else {}
-			}
+//		int sum = 0;
+//		for(int i = 4; i <= 10; i++) {
+//			for(int j = 5; i <= 10; j++) {
+//				sum = (4 * i) + (5 * j);
+//				if(sum == 60) {
+//				System.out.println(i + j + sum);}
+//				else {}
+	
 			
 			
-		}
+		
 
 		
 		}
