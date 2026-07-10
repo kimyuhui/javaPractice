@@ -11,7 +11,6 @@ public class Bank {
 		String[][] info = new String[100][3];
 		int a = 0;
 		int b = 0;
-		int i = 0;
 		String name;
 
 		boolean run = true;
@@ -33,7 +32,6 @@ public class Bank {
 				else if(button == 3) {
 					
 					accountCheck(info, a);
-					i = accountCheck(info, a);
 					checkPerson(info, a);
 					sum(info, a, b);
 
@@ -125,7 +123,7 @@ public class Bank {
 			String account = sc.next();
 		
 				for(int i = 0; i < a; i++) {
-					if(! info[a][1].equals(account)) {
+					if(! info[i][1].equals(account)) {
 						System.out.println("입력하신 계좌는 없는 계좌입니다");
 						continue;
 					} else if(info[i][1].equals(account)) {
