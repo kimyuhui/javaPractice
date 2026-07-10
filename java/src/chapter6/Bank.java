@@ -11,6 +11,7 @@ public class Bank {
 		String[][] info = new String[100][3];
 		int a = 0;
 		int b = 0;
+		int i = 0;
 		String name;
 
 		boolean run = true;
@@ -31,10 +32,11 @@ public class Bank {
 				
 				else if(button == 3) {
 					
-					
 					accountCheck(info, a);
+					i = accountCheck(info, a);
 					checkPerson(info, a);
 					sum(info, a, b);
+
 					
 				}	
 				
@@ -46,7 +48,7 @@ public class Bank {
 				}
 				
 				else if(button == 5) {
-					System.out.println("5");
+					balance(info, a, b);
 				}
 						
 				else if(button == 6) {
@@ -109,27 +111,29 @@ public class Bank {
 		
 		for(int i = 0; i < a; i++) {
 			if(name.equals(info[i][0])) {
-			System.out.println("- " + info[i][1]);
+			System.out.print("- " + info[i][1]);
+			System.out.println("      잔액: " + info[i][2]);
 			}
+			System.out.println();
 		}		
 	}
 	
-	static void accountCheck(String[][] info, int a) {
+	static int accountCheck(String[][] info, int a) {
 		Scanner sc = new Scanner(System.in);
-
 		while(true) {
 			System.out.println("계좌번호를 입력하세요");
 			String account = sc.next();
-
-			for(int i = 0; i < 1; i++) {
-				if(!info[i][1].equals(account)) {
-					System.out.println("입력하신 계좌는 없는 계좌입니다");
-					continue;
-				} else if(info[i][1].equals(account)) {
-					return;
-				}
-			}  
-		}
+		
+				for(int i = 0; i < a; i++) {
+					if(! info[a][1].equals(account)) {
+						System.out.println("입력하신 계좌는 없는 계좌입니다");
+						continue;
+					} else if(info[i][1].equals(account)) {
+						return i;
+					}
+				}  
+			}
+		
 
 	}
 
@@ -137,7 +141,7 @@ public class Bank {
 		Scanner sc = new Scanner(System.in);
 		int b = 0;
 		
-		for(int i= 0; i < 1; i++) {
+		for(int i= 0; i < a; i++) {
 		System.out.println(info[i][0] + " 님 맞습니까?");
 		System.out.println("1. 예       2. 아니오");
 		}
@@ -152,6 +156,7 @@ public class Bank {
 	}
 
 	static void sum(String[][] info, int a, int b) {
+
 		int sumMoney = 0;
 		Scanner sc = new Scanner(System.in);
 		int answer = 0;
@@ -177,6 +182,7 @@ public class Bank {
 
 	}
 	
+	
 	static void minus(String[][] info, int a, int b) {
 		int sumMoney = 0;
 		Scanner sc = new Scanner(System.in);
@@ -186,7 +192,9 @@ public class Bank {
 			for(int i = 0; i < a; i++) {
 				int money = Integer.parseInt(info[i][2]);
 				System.out.println("출금하실 금액을 입력해 주세요");
+				System.out.println("출금을 종료하시려면 0을 입력해주세요");
 				sumMoney = sc.nextInt();
+				if(sumMoney == 0) {return;}
 				System.out.println(sumMoney + " 원 츨금하십니까?");
 				System.out.println("1. 예     2. 아니오");
 				answer = sc.nextInt();
@@ -194,17 +202,32 @@ public class Bank {
 					if(money < sumMoney) {
 						System.out.println("잔액이 부족합니다");
 					} else if (money >= sumMoney) {
-					money -= sumMoney;
-					info[i][2] = String.valueOf(money);
-					System.out.println("잔액: " + info[i][2]);
-					return;
+						money -= sumMoney;
+						info[i][2] = String.valueOf(money);
+						System.out.println("잔액: " + info[i][2]);
+						return;
 					}
 				} else if (answer == 2) {
 					accountCheck(info, a);
-					}
+				}
 			}
 		} 
-		
+
 	}
 	
+	static void balance(String[][] info, int a, int b) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("계좌번호를 입력하세요");
+		String account = sc.next();
+
+		for(int i = 0; i < a; i++) {
+			if(account.equals(info[i][1])) {
+			System.out.print("- " + info[i][1]);
+			System.out.println("      잔액: " + info[i][2]);
+			}
+			System.out.println();
+		
+	}
+		
+	}
 }
