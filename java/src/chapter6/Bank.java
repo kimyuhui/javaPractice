@@ -116,22 +116,22 @@ public class Bank {
 		}		
 	}
 	
-	static int accountCheck(String[][] info, int a) {
+	static void accountCheck(String[][] info, int a) {
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			System.out.println("계좌번호를 입력하세요");
 			String account = sc.next();
-		
+			
 				for(int i = 0; i < a; i++) {
-					if(! info[i][1].equals(account)) {
+					if(! account.equals(info[i][1])) {
 						System.out.println("입력하신 계좌는 없는 계좌입니다");
 						continue;
 					} else if(info[i][1].equals(account)) {
-						return i;
+						return;
 					}
-				}  
+				 
 			}
-		
+		}
 
 	}
 
