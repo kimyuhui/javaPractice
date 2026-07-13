@@ -155,8 +155,6 @@ public class bank2 {
 			
 		}
 
-			
-
 		static void sum(String[][] info, int a, int b) {
 
 			int sumMoney = 0;
@@ -179,9 +177,6 @@ public class bank2 {
 					}
 				}
 			} 
-
-		
-
 
 		static void minus(String[][] info, int a, int b) {
 			int sumMoney = 0;
@@ -210,8 +205,6 @@ public class bank2 {
 					}
 				}
 			} 
-
-		
 
 		static void balance(String[][] info, int a, int b) {
 			Scanner sc = new Scanner(System.in);
