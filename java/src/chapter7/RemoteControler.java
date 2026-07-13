@@ -13,18 +13,17 @@ public class RemoteControler {
 		Television tv = new Television();
 		Light lg = new Light();
 		
+		int temper = (int)(Math.random() * 30) + 20;
+		System.out.println("temper: " + temper);
+		
 		boolean boo = true;
 		while(boo = true) {
 			message();
 			int selectMenu = sc.nextInt();
-			
 			if(selectMenu == 4) {
 				boo = false;
 				break;
 			}
-			
-		int temper = rd.nextInt(30);
-		
 			
 		while(true)
 		switch(selectMenu) {
@@ -46,7 +45,6 @@ public class RemoteControler {
 				} else if (selectMenu1 == 5) {
 					break;
 				}
-				
 				
 		case 2:
 			tvMessage();
