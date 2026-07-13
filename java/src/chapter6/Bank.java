@@ -3,7 +3,7 @@ package chapter6;
 import java.util.Scanner;
 
 public class Bank {
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
@@ -30,7 +30,8 @@ public class Bank {
 			}
 
 			else if(button == 3) {
-
+				
+			
 				accountCheck(info, a);
 				checkPerson(info, a);
 				sum(info, a, b);
@@ -59,17 +60,17 @@ public class Bank {
 
 	public static void messege(){
 		System.out.println("====== 은행 업무 프로그램 ====== \r\n"
-					+ " 1. 계좌 생성\r\n"
-					+ " 2. 계좌 목록 조회\r\n"
-					+ " 3. 입금\r\n"
-					+ " 4. 출금\r\n"
-					+ " 5. 잔액 조회\r\n"
-					+ " 6. 종료\r\n"
-					+ "==========================="
-					+ "===========================\r\n"
-					+ " 선택 > ");
+				+ " 1. 계좌 생성\r\n"
+				+ " 2. 계좌 목록 조회\r\n"
+				+ " 3. 입금\r\n"
+				+ " 4. 출금\r\n"
+				+ " 5. 잔액 조회\r\n"
+				+ " 6. 종료\r\n"
+				+ "==========================="
+				+ "===========================\r\n"
+				+ " 선택 > ");
 	}
-	
+
 	public static int person(String[][] info, int a) {
 		Scanner sc = new Scanner(System.in);
 
@@ -115,19 +116,19 @@ public class Bank {
 			System.out.println();
 		}		
 	}
-	
-	static void accountCheck(String[][] info, int a) {
+
+	static int accountCheck(String[][] info, int a) {
 		Scanner sc = new Scanner(System.in);
+		while(true) {
 			System.out.println("계좌번호를 입력하세요");
 			String account = sc.next();
+
 			for(int i = 0; i < a; i++) {
-				if(account.equals(info[i][1])) {
-					return;
-				} if(!info[i][1].equals(account)) {
-					System.out.println("입력하신 계좌는 없는 계좌입니다");
-					
-				
+				if(info[i][1].equals(account)) {
+					return i; 
+				}
 			}
+			System.out.println("입력하신 계좌는 없는 계좌입니다");
 		}
 	}
 
@@ -175,8 +176,8 @@ public class Bank {
 		} 
 
 	}
-	
-	
+
+
 	static void minus(String[][] info, int a, int b) {
 		int sumMoney = 0;
 		Scanner sc = new Scanner(System.in);
@@ -208,7 +209,7 @@ public class Bank {
 		} 
 
 	}
-	
+
 	static void balance(String[][] info, int a, int b) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("계좌번호를 입력하세요");
