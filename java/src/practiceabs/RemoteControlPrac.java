@@ -106,6 +106,7 @@ public class RemoteControlPrac {
 					System.out.println("전등 Off");
 				} break;
 			}
+			sc.close();
 		}
 
 	}
