@@ -12,7 +12,6 @@ public class LightPrac extends RemotePrac {
 			System.out.println("전등이 이미 켜져있습니다");
 			return;
 		}
-
 		power = true;
 		System.out.println("전등이 켜졌습니다");
 		System.out.println("현재 밝기는 " + this.i + "단계 입니다.");
@@ -53,8 +52,6 @@ public class LightPrac extends RemotePrac {
 	public void powerOff() {
 		System.out.println("전등을 끕니다");
 		power = false;
-		
 	}
-
 }
 

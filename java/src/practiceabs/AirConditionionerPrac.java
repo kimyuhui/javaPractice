@@ -10,7 +10,6 @@ public class AirConditionionerPrac extends RemotePrac {
 		System.out.println("에어컨이 이미 켜져있습니다");
 		return;
 	} //이미 에어컨이 켜져있는데 또 시도하면 해당 문구가 출력되도록 함
-
 	power = true; //에어컨을 켜면 true 상태로 바뀌도록 함
 	System.out.println("에어컨이 켜졌습니다.");
 	System.out.println("현재 설정된 온도는 " + this.i + "도 입니다.");

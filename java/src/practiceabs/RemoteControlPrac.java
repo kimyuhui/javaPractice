@@ -39,8 +39,7 @@ public class RemoteControlPrac {
 						air.tempDown(air.i);
 					} else if (selectMenu1 == 5) {
 						break;
-					}	
-					else if (selectMenu1 == 2) {
+					} else if (selectMenu1 == 2) {
 						air.powerOff();
 						break;
 					}
@@ -96,13 +95,11 @@ public class RemoteControlPrac {
 				} else if (air.power == false) {
 					System.out.println("에어컨 Off");
 				}
-
 				if(tv.power == true) {
 					System.out.println("티비 On");
 				} else if (tv.power == false) {
 					System.out.println("티비 Off");
 				}
-
 				if(lg.power == true) {
 					System.out.println("전등 On");
 				} else if (lg.power == false) {

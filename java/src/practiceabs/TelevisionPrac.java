@@ -11,7 +11,6 @@ public class TelevisionPrac extends RemotePrac {
 			System.out.println("티비가 이미 켜져있습니다");
 			return; // 메서드 끝내기
 		}
-
 		power = true; // 티비를 켜면 power = true값으로 바꿔서 상태 변경함
 		System.out.println("티비 전원이 켜졌습니다.");
 		System.out.println("현재 채널은 " + this.i + "번 입니다.");
@@ -36,9 +35,8 @@ public class TelevisionPrac extends RemotePrac {
 		if(power == false) { // 티비가 켜져 있지 않을 때 해당 문구 출력되도록 함
 			System.out.println("티비가 켜져있지 않습니다.");
 		} else if(power == true) {
-
-			if(this.i > 50) // 채널을 50개까지만 만들어놓음
-			{System.out.println("더 올릴 수 없습니다");
+			if(this.i > 50){ // 채널을 50개까지만 만들어놓음
+				System.out.println("더 올릴 수 없습니다");
 			} else {
 				this.i++;
 				System.out.println("채널을 " + this.i + "번으로 바꿉니다.");
