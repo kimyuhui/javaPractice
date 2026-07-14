@@ -16,7 +16,6 @@ public class TelevisionPrac extends RemotePrac {
 		System.out.println("현재 채널은 " + this.i + "번 입니다.");
 	}
 		
-
 	//	void changeChannel(int channel) {
 	//		System.out.println("몇 번으로 바꾸시겠습니까?");
 	//		try {System.out.println("채널을 " + this.channel + "번으로 바꿉니다.");
@@ -29,8 +28,6 @@ public class TelevisionPrac extends RemotePrac {
 	//	}
 					// catch 뒤로 계속 에러가 나서 작동이 안됨.. 
 
-	
-	
 	void changeChannelUp (int channel) {
 		if(power == false) { // 티비가 켜져 있지 않을 때 해당 문구 출력되도록 함
 			System.out.println("티비가 켜져있지 않습니다.");
@@ -56,7 +53,6 @@ public class TelevisionPrac extends RemotePrac {
 			}
 		}
 	}
-
 
 	void changeVolumnUp (int volumn) {
 		if(power == false) {
@@ -86,14 +82,10 @@ public class TelevisionPrac extends RemotePrac {
 		}
 	}
 
-
 	@Override
 	public void powerOff() {
 		System.out.println("티비 전원을 끕니다");
 		power = false;
 	}
-
-
-
 }
 

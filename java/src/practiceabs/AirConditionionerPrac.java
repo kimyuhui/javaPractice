@@ -15,7 +15,6 @@ public class AirConditionionerPrac extends RemotePrac {
 	System.out.println("현재 설정된 온도는 " + this.i + "도 입니다.");
 	}
 	
-
 	void tempUp(int i) {
 		if(power == false) { // 에어컨이 켜져 있지 않을 때 해당 문구 출력되도록 함
 			System.out.println("에어컨이 켜져있지 않습니다.");
@@ -42,13 +41,11 @@ public class AirConditionionerPrac extends RemotePrac {
 		}
 	}
 
-
 	@Override
 	public void powerOff() {
 		System.out.println("에어컨 전원을 끕니다");
 		power = false;
 	}
-
 }
 
 

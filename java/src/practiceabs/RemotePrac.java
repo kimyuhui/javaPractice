@@ -6,5 +6,4 @@ boolean power;
 	public abstract void powerOn(int i);
 	
 	public abstract void powerOff();
-	
 }

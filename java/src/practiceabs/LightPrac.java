@@ -17,7 +17,6 @@ public class LightPrac extends RemotePrac {
 		System.out.println("현재 밝기는 " + this.i + "단계 입니다.");
 	}
 	
-
 	void lightLevelUp(int lightLevel) {
 		if(power == false) {
 			System.out.println("전등이 켜져 있지 않습니다.");
@@ -32,7 +31,6 @@ public class LightPrac extends RemotePrac {
 		}
 	}
 
-
 	void lightLevelDown(int lightLevel) {
 		if(power == false) {
 			System.out.println("전등이 켜져 있지 않습니다.");
@@ -46,7 +44,6 @@ public class LightPrac extends RemotePrac {
 			}
 		}
 	}
-
 
 	@Override
 	public void powerOff() {
