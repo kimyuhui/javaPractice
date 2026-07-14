@@ -19,6 +19,7 @@ public class RemoteControler {
 			int selectMenu = sc.nextInt();
 			if(selectMenu == 4) {
 				boo = false;
+				System.out.println("리모콘을 끕니다.");
 				break;
 			}
 			
@@ -28,15 +29,14 @@ public class RemoteControler {
 					airMessage();
 					int selectMenu1 = sc.nextInt();
 					if(selectMenu1 == 1) {
-						air.temp = (int)(Math.random() * 30) + 10;
 						air.powerOn(air.temp);
 					} else if (selectMenu1 == 3) {
-						air.temp++;
 						air.tempUp(air.temp);
 					} else if (selectMenu1 == 4) {
-						air.temp--;
 						air.tempDown(air.temp);
 					} else if (selectMenu1 == 2) {
+						System.out.println("에어컨을 끕니다.");
+						air.function = false;
 						break;
 					}
 				} break;
@@ -47,26 +47,19 @@ public class RemoteControler {
 					tvMessage();
 					int selectMenu2 = sc.nextInt();
 					if(selectMenu2 == 1) {
-						tv.channel = (int)(Math.random() * 50) + 1;
-						tv.volumn = (int)(Math.random() * 12) + 0;
 						tv.powerOn(tv.channel, tv.volumn);;
 					} else if (selectMenu2 == 3) {
-						tv.channel++;
-						tv.changeChannel(tv.channel);
+						tv.changeChannelUp(tv.channel);
 					} else if (selectMenu2 == 4) {
-						tv.changeChannel(tv.channel);
-						tv.channel--;
+						tv.changeChannelDown(tv.channel);
 					}
 					  else if (selectMenu2 == 5) {
-						System.out.println("현재 볼륨은 " + tv.volumn +"입니다.");
-						tv.volumn++;
-						tv.changeVolumn(tv.volumn);
-					} else if (selectMenu2 == 6) {
-						System.out.println("현재 볼륨은 " + tv.volumn +"입니다.");
-						tv.volumn--;
-						tv.changeVolumn(tv.volumn);
+						tv.changeVolumnUp(tv.volumn);
+					} else if (selectMenu2 == 6)  {
+						tv.changeVolumnDown(tv.volumn);
 					}
 					else if (selectMenu2 == 2) {
+						System.out.println("티비를 끕니다.");
 						break;
 					}
 				} break;
@@ -76,18 +69,16 @@ public class RemoteControler {
 					lightMessage();
 					int selectMenu3 = sc.nextInt();
 					if(selectMenu3 == 1) {
-						lg.lightLevel = (int)(Math.random() * 7) + 1;
 						lg.powerOn(lg.lightLevel);
 					}
 					else if(selectMenu3 == 3) {
-						lg.lightLevel++;
-						lg.lightLevel(lg.lightLevel);
+						lg.lightLevelUp(lg.lightLevel);
 					} 
 					else if(selectMenu3 == 4) {
-						lg.lightLevel--;
-						lg.lightLevel(lg.lightLevel);
+						lg.lightLevelDown(lg.lightLevel);
 					}
 					else if(selectMenu3 == 2) {
+						System.out.println("전등을 끕니다.");
 						break;
 					}
 				} 
