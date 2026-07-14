@@ -1,14 +1,12 @@
 package chapter7;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class RemoteControler {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Random rd = new Random();
-		
+
 		AirConditioner air = new AirConditioner();
 		Television tv = new Television();
 		Light lg = new Light();
@@ -43,7 +41,6 @@ public class RemoteControler {
 						break;
 					}	
 					else if (selectMenu1 == 2) {
-						
 						air.powerOff();
 						break;
 					}
@@ -61,8 +58,7 @@ public class RemoteControler {
 						tv.changeChannelUp(tv.channel);
 					} else if (selectMenu2 == 4) {
 						tv.changeChannelDown(tv.channel);
-					}
-					  else if (selectMenu2 == 5) {
+					} else if (selectMenu2 == 5) {
 						tv.changeVolumnUp(tv.volumn);
 					} else if (selectMenu2 == 6)  {
 						tv.changeVolumnDown(tv.volumn);
@@ -81,17 +77,13 @@ public class RemoteControler {
 					int selectMenu3 = sc.nextInt();
 					if(selectMenu3 == 1) {
 						lg.powerOn(lg.lightLevel);
-					}
-					else if(selectMenu3 == 3) {
+					} else if(selectMenu3 == 3) {
 						lg.lightLevelUp(lg.lightLevel);
-					} 
-					else if(selectMenu3 == 4) {
+					} else if(selectMenu3 == 4) {
 						lg.lightLevelDown(lg.lightLevel);
-					}
-					else if(selectMenu3 == 5) {
+					} else if(selectMenu3 == 5) {
 						break;
-					}
-					else if(selectMenu3 == 2) {
+					} else if(selectMenu3 == 2) {
 						lg.powerOff();
 						break;
 					}
@@ -119,7 +111,6 @@ public class RemoteControler {
 		}
 
 	}
-	
 	
 	// 메뉴 문구들
 	
