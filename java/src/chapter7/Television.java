@@ -4,12 +4,18 @@ import java.util.Scanner;
 
 public class Television extends Remote {
 	Scanner sc = new Scanner(System.in);
-	int channel = 8;
+	int channel = 8; //채널과 볼륨의 초기값을 8번, 10으로 해놓음
 	int volumn = 10;
 
 
 
 	void powerOn(int channel, int volumn) {
+		if(power == true) { //이미 티비 전원을 한번 켰을 시 해당 문구가 출력되도록 함 
+			System.out.println("티비가 이미 켜져있습니다");
+			return; // 메서드 끝내기
+		}
+
+		power = true; // 티비를 켜면 power = true값으로 바꿔서 상태 변경함
 		System.out.println("티비 전원이 켜졌습니다.");
 		System.out.println("현재 채널은 " + this.channel + "번 입니다.");
 		System.out.println("현재 볼륨은 " + this.volumn + "입니다.");
@@ -25,47 +31,63 @@ public class Television extends Remote {
 	//		}
 	//		
 	//	}
+					// catch 뒤로 계속 에러가 나서 작동이 안됨.. 
 
+	
+	
 	void changeChannelUp (int channel) {
-		this.channel++;
-		if(this.channel > 50)
-		{System.out.println("더 올릴 수 없습니다");
-		this.channel--;
-		} else {
-			System.out.println("채널을 " + this.channel + "번으로 바꿉니다.");
+		if(power == false) { // 티비가 켜져 있지 않을 때 해당 문구 출력되도록 함
+			System.out.println("티비가 켜져있지 않습니다.");
+		} else if(power == true) {
+
+			if(this.channel > 50) // 채널을 50개까지만 만들어놓음
+			{System.out.println("더 올릴 수 없습니다");
+			} else {
+				this.channel++;
+				System.out.println("채널을 " + this.channel + "번으로 바꿉니다.");
+			}
 		}
 	}
 
 	void changeChannelDown (int channel) {
-		this.channel--;
-		if(this.channel < 0) {
-			System.out.println("더 내릴 수 없습니다");
-			this.channel++;
-		} else {
-			System.out.println("채널을 " + channel + "번으로 바꿉니다.");
+		if(power == false) {
+			System.out.println("티비가 켜져있지 않습니다.");
+		} else if(power == true) {
+			if(this.channel < 1) { // 1번 아래로는 채널을 돌리지 못하게 함
+				System.out.println("더 내릴 수 없습니다");
+			} else {
+				this.channel--;
+				System.out.println("채널을 " + channel + "번으로 바꿉니다.");
+			}
 		}
 	}
 
 
 	void changeVolumnUp (int volumn) {
-		System.out.println("현재 볼륨은 " + this.volumn +"입니다.");
-		this.volumn++;
-		if(this.volumn > 20) {
-			System.out.println("더 올릴 수 없습니다.");
-			this.volumn--;
-		} else {
-			System.out.println("볼륨을 " + this.volumn + "로 바꿉니다.");
+		if(power == false) {
+			System.out.println("티비가 켜져있지 않습니다.");
+		} else if(power == true) {
+			System.out.println("현재 볼륨은 " + this.volumn +"입니다.");
+			if(this.volumn > 20) { // 최대 볼륨을 20으로 설정해둠
+				System.out.println("더 올릴 수 없습니다.");
+			} else {
+				this.volumn++;
+				System.out.println("볼륨을 " + this.volumn + "로 바꿉니다.");
+			}
 		}
 	}
 
 	void changeVolumnDown (int volumn) {
-		System.out.println("현재 볼륨은 " + this.volumn +"입니다.");
-		this.volumn--;
-		if(this.volumn < 0) {
-			System.out.println("최저 볼륨입니다");
-			this.volumn++;
-		} else {
-			System.out.println("볼륨을 " + this.volumn + "로 바꿉니다.");
+		if(power == false) {
+			System.out.println("티비가 켜져있지 않습니다.");
+		} else if(power == true) {
+			System.out.println("현재 볼륨은 " + this.volumn +"입니다.");
+			if(this.volumn < 0) { // 최저 볼륨을 0으로 설정해둠
+				System.out.println("최저 볼륨입니다");
+			} else {
+				this.volumn--;
+				System.out.println("볼륨을 " + this.volumn + "로 바꿉니다.");
+			}
 		}
 	}
 
