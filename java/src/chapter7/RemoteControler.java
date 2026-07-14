@@ -10,21 +10,21 @@ public class RemoteControler {
 		AirConditioner air = new AirConditioner();
 		Television tv = new Television();
 		Light lg = new Light();
-			
+
 		boolean boo = true;
-	
+
 		//5가 입력되면 boo = false가 되어 while문이 중단됨
-		
+
 		while(boo == true) {
 			message(); //전체 메뉴를 숫자로 입력받음
 			int selectMenu = sc.nextInt();
-			
+
 			if(selectMenu == 5) { //while문 중단
 				boo = false;
 				System.out.println("리모콘을 끕니다.");
 				break;
 			}
-			
+
 			switch(selectMenu) {
 			case 1: // 에어컨 메뉴
 				while(true) {
@@ -88,20 +88,20 @@ public class RemoteControler {
 						break;
 					}
 				} 
-				
+
 			case 4: // 현재 켜져 있는 기능 확인 - if문을 이용하여 true면 On, false면 Off로 출력되도록 함 
 				if(air.power == true) {
 					System.out.println("에어컨 On");
 				} else if (air.power == false) {
 					System.out.println("에어컨 Off");
 				}
-				
+
 				if(tv.power == true) {
 					System.out.println("티비 On");
 				} else if (tv.power == false) {
 					System.out.println("티비 Off");
 				}
-				
+
 				if(lg.power == true) {
 					System.out.println("전등 On");
 				} else if (lg.power == false) {
