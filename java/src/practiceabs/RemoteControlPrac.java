@@ -43,7 +43,7 @@ public class RemoteControlPrac {
 						air.powerOff();
 						break;
 					}
-				} break;
+				} break; // switch문이므로 while문이 끝난 뒤 break 써주기
 
 
 			case 2: // 티비 메뉴
