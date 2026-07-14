@@ -68,8 +68,7 @@ public class RemoteControler {
 						tv.changeVolumnDown(tv.volumn);
 					} else if (selectMenu2 == 7) {
 						break;
-					}
-					else if (selectMenu2 == 2) {
+					} else if (selectMenu2 == 2) {
 						tv.powerOff();
 						break;
 					}
