@@ -3,8 +3,8 @@ package practice.test260715;
 import java.util.Scanner;
 
 public class GameExample {
-	
-	public final static int gameScore = 300;
+
+	public final static int gameScore = 30;
 
 	public static void main(String[] args) {
 
@@ -60,13 +60,14 @@ public class GameExample {
 				} else if (count >= 1) {
 					System.out.println("강아지: 멍멍! 다음에 또 해요~ U^ㅅ^U");
 					break; // 시작 메뉴에서 2. 끝내기를 선택하면 게임이 종료되도록 함 
-				} else {
-					System.out.println();
-					System.out.println("잘못된 입력을 하셨습니다!");
-					System.out.println("강아지: 1과 2만 누를 수 있어요! 멍멍");
-					System.out.println();
-					continue; // 시작 메뉴에서 1과 2를 제외한 다른 것을 입력하면 다시 시작되도록 함
 				}
+			}
+			else {
+				System.out.println();
+				System.out.println("잘못된 입력을 하셨습니다!");
+				System.out.println("강아지: 1과 2만 누를 수 있어요! 멍멍");
+				System.out.println();
+				continue; // 시작 메뉴에서 1과 2를 제외한 다른 것을 입력하면 다시 시작되도록 함
 			}
 		}
 
