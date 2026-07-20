@@ -114,13 +114,13 @@ public class Game {
 			for(int i = 0; i < 3; i++) {
 				userDice = userDiceAnswer.charAt(i);
 				if(userDice == '1') {
-					userDice = (char) dice.roll();
+					userDice = dice.roll();
 				} else if (userDice == '2') {
-					userDice = (char) dangerdice.roll();
+					userDice = dangerdice.roll();
 				} else if (userDice == '3') {
-					userDice = (char) safedice.roll();
+					userDice = safedice.roll();
 				} else if (userDice == '4') {
-					userDice = (char) sosodice.roll();
+					userDice = sosodice.roll();
 				} else {
 					System.out.println("잘못 입력하셨습니다");
 					System.out.println("이번 턴은 0점입니다");
@@ -177,6 +177,7 @@ public class Game {
 				computerDice = dice.roll();
 				computerDiceSum += computerDice;
 			} 
+			
 			computerCount++;
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
@@ -188,13 +189,13 @@ public class Game {
 			for(int i = 0; i < 3; i++) {
 				userDice = userDiceAnswer.charAt(i);
 				if(userDice == '1') {
-					userDice = (char) dice.roll();
+					userDice = dice.roll();
 				} else if (userDice == '2') {
-					userDice = (char) dangerdice.roll();
+					userDice = dangerdice.roll();
 				} else if (userDice == '3') {
-					userDice = (char) safedice.roll();
+					userDice = safedice.roll();
 				} else if (userDice == '4') {
-					userDice = (char) sosodice.roll();
+					userDice = sosodice.roll();
 				} else {
 					System.out.println("잘못 입력하셨습니다");
 					System.out.println("이번 턴은 0점입니다");
