@@ -107,7 +107,6 @@ public class RockScissorPaper {
 			} 
 			} // 입력하는 사람이 가위, 바위, 보 말고 다른 문자열을 입력하면 위의 문구가 출력되도록 함
 		}
-
 		if(this.lose == true) {
 			System.out.println("========================");
 			System.out.println("당신이 졌습니다");
@@ -121,6 +120,5 @@ public class RockScissorPaper {
 			System.out.println("========================");
 			System.out.println();
 		}
-
 	}
 }
