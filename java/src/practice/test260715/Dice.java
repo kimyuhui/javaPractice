@@ -17,7 +17,6 @@ public class Dice implements DiceRoll {
 		System.out.println("마약방석 주사위 선택");
 		System.out.println("결과: " + result0);
 	
-		return result0; 
-		
+		return result0;
 	}
 }

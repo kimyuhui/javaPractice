@@ -39,6 +39,7 @@ public class Example {
 				userDiceSum += userDice;
 			}
 			userCount++;
+			
 			System.out.println("합계: " + userDiceSum);
 			System.out.println("========================");
 
@@ -47,6 +48,7 @@ public class Example {
 				computerDiceSum += computerDice;
 			} 
 			computerCount++;
+		
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
 			

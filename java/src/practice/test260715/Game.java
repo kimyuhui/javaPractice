@@ -4,7 +4,7 @@ import java.util.Scanner;
 // 수정본
 public class Game {
 
-	public final static int gameScore = 300;
+	public final static int gameScore = 50;
 
 	public static void main(String[] args) {
 		RockScissorPaper rspaper = new RockScissorPaper();
@@ -108,6 +108,7 @@ public class Game {
 		int userCount = 0;
 
 		while(userDiceSum < gameScore && computerDiceSum < gameScore) {
+			System.out.println("내 차례");
 			System.out.println("주사위 고르세요 (3개 -> 123 형식으로 입력");
 			String userDiceAnswer = sc.next();
 			for(int i = 0; i < 3; i++) {
@@ -130,7 +131,9 @@ public class Game {
 			userCount++;
 			System.out.println("합계: " + userDiceSum);
 			System.out.println("========================");
+			System.out.println();
 
+			System.out.println("강아지 차례");
 			for(int i = 0; i < 3; i++) {
 				computerDice = dice.roll();
 				computerDiceSum += computerDice;
@@ -138,6 +141,7 @@ public class Game {
 			computerCount++;
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
+			System.out.println();
 			System.out.println("현재 나의 총합: " + userDiceSum
 					+ " / " + "주사위 굴린 횟수: " + userCount);
 			System.out.println("현재 강아지 총합: " + computerDiceSum
@@ -168,6 +172,7 @@ public class Game {
 		int userDice = 0;
 
 		while(userDiceSum < gameScore && computerDiceSum < gameScore) {
+			System.out.println("강아지 차례");
 			for(int i = 0; i < 3; i++) {
 				computerDice = dice.roll();
 				computerDiceSum += computerDice;
@@ -175,7 +180,9 @@ public class Game {
 			computerCount++;
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
-			
+			System.out.println();
+
+			System.out.println("내 차례");
 			System.out.println("주사위 고르세요 (3개 -> 123 형식으로 입력");
 			String userDiceAnswer = sc.next();
 			for(int i = 0; i < 3; i++) {
@@ -198,6 +205,7 @@ public class Game {
 			userCount++;
 			System.out.println("합계: " + userDiceSum);
 			System.out.println("========================");
+			System.out.println();
 			System.out.println("현재 나의 총합: " + userDiceSum
 					+ " / " + "주사위 굴린 횟수: " + userCount);
 			System.out.println("현재 강아지 총합: " + computerDiceSum
