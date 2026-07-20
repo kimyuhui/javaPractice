@@ -21,7 +21,7 @@ public class GameExample {
 			if(onetwo.equals("1")) {
 				rspaper.rsp();
 
-				if(rspaper.i == 1) { // 가위바위보를 하여 이기면 입력하는 사람 먼저, 지면 컴퓨터 먼저
+				if(rspaper.lose == true) { // 가위바위보를 하여 이기면 입력하는 사람 먼저, 지면 컴퓨터 먼저
 					play2(); // 컴퓨터가 먼저 턴을 갖게 되는 메소드
 					count++;
 					messageAgain(); // 게임이 끝난 뒤 출력될 문구
@@ -35,7 +35,7 @@ public class GameExample {
 						break;
 					}
 					break;
-				} else if(rspaper.i == 2) {
+				} else if(rspaper.win == true) {
 					play1(); // 입력하는 사람이 먼저 턴을 갖게 되는 메소드
 					count++;
 					messageAgain();
@@ -48,7 +48,7 @@ public class GameExample {
 						break;
 					}
 					break;
-				} else if(rspaper.i == 4) { 
+				} else if(rspaper.wrongAnswer == true) { 
 					// 가위바위보에서 잘못된 문자열을 5번 입력하고, 강아지에게 나쁜 말을 했을 때
 					break;
 				} break;

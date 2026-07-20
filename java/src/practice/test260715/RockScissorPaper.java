@@ -8,7 +8,10 @@ public class RockScissorPaper {
 	
 	Random rd = new Random();
 	String[] hand = {"가위", "바위", "보"};
-	int i = 0;
+	boolean wrongAnswer;
+	
+	boolean win;
+	boolean lose;
 	// i값을 메인 메소드에서도 사용하려고 필드로 선언함
 	// i를 메소드 안에서만 선언하면 메인 메소드에서 i값을 읽지 못함
 	
@@ -35,20 +38,20 @@ public class RockScissorPaper {
 					System.out.println("비겼습니다");
 					System.out.println("한 판 더!");
 				} else if (randomHand == 1) {
-					this.i = 1;
+					this.lose = true;
 					System.out.println("강아지: 바위");
 					run = false;
 					break;
 				} else if (randomHand == 2) {
 					System.out.println("강아지: 보");
-					this.i = 2;
+					this.win = true;
 					run = false;
 					break;
 				}
 			} else if(userHand.equals("바위")) {
 				if(randomHand == 0) {
 					System.out.println("강아지: 가위");
-					this.i = 2;
+					this.win = true;
 					run = false;
 					break;
 				} else if (randomHand == 1) {
@@ -57,19 +60,19 @@ public class RockScissorPaper {
 					System.out.println("한 판 더!");
 				} else if (randomHand == 2) {
 					System.out.println("강아지: 보");
-					this.i = 1;
+					this.lose = true;
 					run = false;
 					break;
 				}
 			} else if(userHand.equals("보")) {
 				if(randomHand == 0) {
 					System.out.println("강아지: 가위");
-					this.i = 1;
+					this.lose = true;
 					run = false;
 					break;
 				} else if (randomHand == 1) {
 					System.out.println("강아지: 바위");
-					this.i = 2;
+					this.win = true;
 					run = false;
 					break;
 				} else if (randomHand == 2) {
@@ -96,24 +99,24 @@ public class RockScissorPaper {
 								run = true;
 							} else if (answerDog.equals("2")) {
 								System.out.println("강아지: 저도 당신같은 주인님은 싫어요!");
-								this.i = 4;
+								this.wrongAnswer = true;
 								run = false;
 								break;
 							} else {System.out.println("강아지: 주인님 때문에 화나요!");
-							this.i = 4;
+							this.wrongAnswer = true;
 							break;
 							} 
 					} 
 			} // 입력하는 사람이 가위, 바위, 보 말고 다른 문자열을 입력하면 위의 문구가 출력되도록 함
 		}
 
-		if(this.i == 1) {
+		if(this.lose == true) {
 			System.out.println("========================");
 			System.out.println("당신이 졌습니다");
 			System.out.println("강아지도 가위바위보를 잘합니다!");
 			System.out.println("========================");
 			System.out.println();
-		} else if(this.i == 2) {
+		} else if(this.win == true) {
 			System.out.println("========================");
 			System.out.println("당신이 이겼습니다");
 			System.out.println("강아지: 역시 주인님이에요! 멍멍!");
