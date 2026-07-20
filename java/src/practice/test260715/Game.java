@@ -7,7 +7,6 @@ public class Game {
 	public final static int gameScore = 300;
 
 	public static void main(String[] args) {
-
 		RockScissorPaper rspaper = new RockScissorPaper();
 		Scanner sc = new Scanner(System.in);
 		int normalDice = 0;
@@ -21,7 +20,6 @@ public class Game {
 			String onetwo = sc.next(); 
 			if(onetwo.equals("1")) {
 				rspaper.rsp();
-
 				if(rspaper.lose == true) { // 가위바위보를 하여 이기면 입력하는 사람 먼저, 지면 컴퓨터 먼저
 					RollDice2(normalDice, dangerDice, safeDice, sosoDice); // 컴퓨터가 먼저 턴을 갖게 되는 메소드
 					count++;
@@ -70,7 +68,6 @@ public class Game {
 				}
 			}
 		}
-
 	}
 
 	static void message() { 
@@ -90,7 +87,6 @@ public class Game {
 		System.out.println("* 강아지와 가위바위보를 하여 순서를 정합니다 *");
 		System.out.println("========================");
 		System.out.println("1. play              2. 끝내기");
-
 	}
 	// 시작 메뉴 
 	static void messageAgain() {
@@ -142,8 +138,6 @@ public class Game {
 			computerCount++;
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
-
-
 			System.out.println("현재 나의 총합: " + userDiceSum
 					+ " / " + "주사위 굴린 횟수: " + userCount);
 			System.out.println("현재 강아지 총합: " + computerDiceSum
@@ -157,7 +151,6 @@ public class Game {
 		} else {
 			System.out.println("제가 이겼습니다");
 		} return;
-
 	} 
 	// 사용자가 이겼을 때 (사용자 먼저 턴을 갖게 됨)
 	static void RollDice2(int normalDice, int dangerDice, int safeDice, int sosoDice) {
@@ -174,7 +167,6 @@ public class Game {
 		int userCount = 0;
 		int userDice = 0;
 
-
 		while(userDiceSum < gameScore && computerDiceSum < gameScore) {
 			for(int i = 0; i < 3; i++) {
 				computerDice = dice.roll();
@@ -183,7 +175,7 @@ public class Game {
 			computerCount++;
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
-
+			
 			System.out.println("주사위 고르세요 (3개 -> 123 형식으로 입력");
 			String userDiceAnswer = sc.next();
 			for(int i = 0; i < 3; i++) {
@@ -206,10 +198,8 @@ public class Game {
 			userCount++;
 			System.out.println("합계: " + userDiceSum);
 			System.out.println("========================");
-
 			System.out.println("현재 나의 총합: " + userDiceSum
 					+ " / " + "주사위 굴린 횟수: " + userCount);
-
 			System.out.println("현재 강아지 총합: " + computerDiceSum
 					+ " / " + "주사위 굴린 횟수: " + computerCount);
 		}

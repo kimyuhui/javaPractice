@@ -8,7 +8,6 @@ public class Example {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
 		Dice dice = new Dice();
 		DangerDice dangerdice = new DangerDice();
 		SafeDice safedice = new SafeDice();
@@ -17,14 +16,12 @@ public class Example {
 		int computerDice = 0;
 		int computerDiceSum = 0;
 		int computerCount = 0;
-
-
 		int userDiceSum = 0;
 		int userCount = 0;
 		int userDice = 0;
-		System.out.println("주사위 고르세요 (3개 -> 123 형식으로 입력");
-
+		
 		while(userDiceSum < gameScore) {
+			System.out.println("주사위 고르세요 (3개 -> 123 형식으로 입력");
 			String userDiceAnswer = sc.next();
 			for(int i = 0; i < 3; i++) {
 				for(int j = 0; j < 1; j++) {
@@ -41,7 +38,6 @@ public class Example {
 				} 
 				userDiceSum += userDice;
 			}
-
 			userCount++;
 			System.out.println("합계: " + userDiceSum);
 			System.out.println("========================");
@@ -53,15 +49,12 @@ public class Example {
 			computerCount++;
 			System.out.println("합계: " + computerDiceSum);
 			System.out.println("========================");
+			
 			System.out.println("현재 나의 총합: " + userDiceSum
 					+ " / " + "주사위 굴린 횟수: " + userCount);
 			System.out.println("현재 강아지 총합: " + computerDiceSum
 					+ " / " + "주사위 굴린 횟수: " + computerCount);
 		}
-
-
-
-
 		if(userDiceSum >= computerDiceSum && userCount >= computerCount) {
 			System.out.println("당신이 이겼습니다");
 		} else if(userDiceSum == computerDiceSum && userCount == computerCount) {
@@ -69,10 +62,5 @@ public class Example {
 		} else if(userDiceSum <= computerDiceSum && userCount <= computerCount){
 			System.out.println("제가 이겼습니다");
 		}
-
 	} 
-
-
-
-
 }
