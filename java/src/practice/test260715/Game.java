@@ -108,7 +108,7 @@ public class Game {
 		int userDice = 0;
 		int userDiceSum = 0;
 		int userCount = 0;
-		int[] computer = {1, 2, 3, 4};
+		int[] computer = {1, 2, 3, 4}; // 컴퓨터가 주사위를 랜덤으로 뽑게 하기 위해 사용
 		int computerNum = computer.length;
 
 		// user의 주사위 총합이나 컴퓨터의 주사위 총합이 gameScore를 넘으면 while문이 종료되도록 함
@@ -159,8 +159,8 @@ public class Game {
 
 			System.out.println("강아지 차례");
 			for(int i = 0; i < 3; i++) {
-				int computerRandom = rd.nextInt(computerNum);
-				int computerResult = computer[computerRandom];
+				int computerRandom = rd.nextInt(computerNum); //computer 배열의 인덱스 길이중에 랜덤한 숫자가 나옴
+				int computerResult = computer[computerRandom]; //위에서 나온 값의 인덱스에 해당하는 computer 숫자 나옴
 				if(computerDiceSum >= gameScore) {
 					i = 3;
 				} else {
@@ -216,7 +216,7 @@ public class Game {
 		int userDiceSum = 0;
 		int userCount = 0;
 		int userDice = 0;
-		int[] computer = {1, 2, 3, 4};
+		int[] computer = {1, 2, 3, 4}; // 컴퓨터가 주사위를 랜덤으로 뽑게 하기 위해 사용
 		int computerNum = computer.length;
 
 		while(userDiceSum < gameScore && computerDiceSum < gameScore) {
