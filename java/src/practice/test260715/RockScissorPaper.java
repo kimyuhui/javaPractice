@@ -9,11 +9,10 @@ public class RockScissorPaper {
 	Random rd = new Random();
 	String[] hand = {"가위", "바위", "보"};
 	boolean wrongAnswer;
-
 	boolean win;
 	boolean lose;
-	// i값을 메인 메소드에서도 사용하려고 필드로 선언함
-	// i를 메소드 안에서만 선언하면 메인 메소드에서 i값을 읽지 못함
+	// 승리했을 때 win = true
+	// 졌을 때 lose = true
 
 	// 가위바위보 메소드
 	public void rsp() {
@@ -79,28 +78,22 @@ public class RockScissorPaper {
 					System.out.println("한 판 더!");
 				}
 			} else {System.out.println("가위, 바위, 보만 낼 수 있어요");
-			System.out.println("강아지: 반칙하면 안 돼요! U-ㅅ-U");
 			fault++;
-			if(fault == 3) {
-				System.out.println();
-				System.out.println("강아지: 하기 싫으면 말로 해요! U◐ㅅ◑U");
-				System.out.println();
-			}
-			else if(fault == 5) {
+			if(fault == 5) {
 				System.out.println();
 				System.out.println("강아지는 삐졌습니다");
 				System.out.println("강아지가 놀고 싶지 않은가봅니다");
 				System.out.println("1. 강아지 미안해!     2. 저리 가 똥개야");
 				String answerDog = sc.next();
 				if(answerDog.equals("1")) {
-					System.out.println("강아지: 괜찮아요! 다시 해요! U^ㅅ^U");
+					System.out.println("강아지: 괜찮아요! 다시 해요");
 					run = true;
 				} else if (answerDog.equals("2")) {
-					System.out.println("강아지: 저도 당신같은 주인님은 싫어요!");
+					System.out.println("강아지: 저도 당신같은 주인님은 싫어요");
 					this.wrongAnswer = true;
 					run = false;
 					break;
-				} else {System.out.println("강아지: 주인님 때문에 화나요!");
+				} else {System.out.println("강아지: 주인님 때문에 화나요");
 				this.wrongAnswer = true;
 				break;
 				} 
@@ -110,13 +103,11 @@ public class RockScissorPaper {
 		if(this.lose == true) {
 			System.out.println("========================");
 			System.out.println("당신이 졌습니다");
-			System.out.println("강아지도 가위바위보를 잘합니다!");
 			System.out.println("========================");
 			System.out.println();
 		} else if(this.win == true) {
 			System.out.println("========================");
 			System.out.println("당신이 이겼습니다");
-			System.out.println("강아지: 역시 주인님이에요! 멍멍!");
 			System.out.println("========================");
 			System.out.println();
 		}
