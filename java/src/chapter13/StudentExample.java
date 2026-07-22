@@ -22,8 +22,12 @@ public class StudentExample {
 		std.setClass1(sc.nextLine());
 		System.out.print("반 ");
 		std.setClass2(sc.nextLine());
+		System.out.print("번호 ");
+		std.setNum(sc.nextLine());
+		
+		std.setStudentNum(std.getClass1() + std.getClass2() + std.getNum());
 
-		System.out.println(std.getName() + std.getClass1() + std.getClass2());
+		
 		
 	}
 }
