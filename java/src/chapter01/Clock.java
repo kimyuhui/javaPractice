@@ -13,22 +13,33 @@ public class Clock {
 		
 		System.out.println(sdff);
 		
+		
+		
+		System.out.println("-------------------------------------");
+		
 		SimpleDateFormat a = new SimpleDateFormat("hh시 mm분");
 		SimpleDateFormat b = new SimpleDateFormat("hh:mm:ss");
 		
-		long time = System.currentTimeMillis();
+		long time = now.getHours() * 3600
+				+ now.getMinutes() * 60 + now.getSeconds();
 		
-		String ntime = b.format(time);
+		String ntime = b.format(now);
 		
 		long t = 60600 - time;
 		
-		String m = a.format(t); 
+		System.out.println("수료식 날짜: 2026년 11월 23일");
+		
+		Date end = new Date(126, 10, 23);
+		long diff = end.getTime() - now.getTime();
+		long day = diff / (1000 * 60 * 60 * 24);
+		System.out.println("수료식까지 " + day + "일 남았습니다.");
+		
+		System.out.println("-------------------------------------");
 		
 		System.out.println("현재 시간 " + ntime);
-		System.out.println("집에 갈 때까지 " + t + " 남았습니다");
+		System.out.println("집에 갈 때까지 " + (t / 3600) + 
+				"시간 " + (t % 3600) / 60 + "분 " + (t % 60) + "초" + " 남았습니다.");
 		
-		// TODO Auto-generated method stub
-
 	}
 
 }
