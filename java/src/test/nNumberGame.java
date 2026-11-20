@@ -22,7 +22,7 @@ public class nNumberGame {
 		for(int i = 0; i < m*t; i++) {
 			String str = Integer.toString(i, n);
 			str = str.toUpperCase();
-			a = a + str;
+			a += str;
 		}
 
 		char[] b = new char[t];
